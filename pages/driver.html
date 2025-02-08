@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../src/output.css" rel="stylesheet">
+</head>
+<body style="font-family:'lor',cascadia" class="text-base-content p-6">
+  <div class="max-w-xl mx-auto space-y-6">
+    <!-- Profile Section -->
+    <div class="bg-base-100 p-6 rounded-box border border-info/20">
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Driver" class="w-20 h-20 rounded-full">
+            <div class="flex-1">
+                <h1 class="text-2xl font-bold">John Doe</h1>
+                <p class="text-neutral-content">Metro Sacco</p>
+                <div class="flex gap-4 mt-2">
+                    <span class="px-3 py-1 bg-success text-success-content rounded-md">
+                        Safety Score: 85%
+                    </span>
+                    <span class="px-3 py-1 bg-error text-error-content rounded-box">
+                        Violations: 3
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Matatu Details -->
+    <div class="bg-base-200 p-6 rounded-box border border-info/20">
+        <h2 class="text-xl font-semibold mb-4">Assigned Matatu</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="flex items-center gap-2">
+                <span class="text-info"> </span> KBZ 123X
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="px-3 py-1 bg-success text-success-content rounded-box">Active</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <span class="text-accent"> </span> Route 23
+            </div>
+        </div>
+    </div>
+
+    <!-- Ratings Section -->
+    <div class="bg-base-200 p-6 rounded-box border border-info/20">
+        <h2 class="text-xl font-semibold mb-4">Recent Ratings & Feedback</h2>
+        <div class="space-y-4">
+            <div class="border-b border-base-300 pb-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-success"> </span> <span class="text-sm text-neutral-content">2024-01-16</span>
+                </div>
+                <p class="text-sm text-base-content">Good service, punctual driver</p>
+            </div>
+            <div class="border-b border-base-300 pb-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-warning"> </span> <span class="text-sm text-neutral-content">2024-01-15</span>
+                </div>
+                <p class="text-sm ">Drove too fast</p>
+            </div>
+            <div class="border-b border-base-300 pb-4">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-success"> </span> <span class="text-sm text-neutral-content">2024-01-14</span>
+                </div>
+                <p class="text-sm text-base-content">Very professional and courteous</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Violations Section -->
+    <div class="bg-base-200 p-6 rounded-box border border-info/20">
+        <h2 class="text-xl font-semibold mb-4">Violation History</h2>
+        <div class="space-y-4">
+            <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-base-300 pb-4">
+                <div>
+                    <p class="font-medium">Speeding</p>
+                    <p class="text-sm text-neutral-content">2024-01-15</p>
+                </div>
+                <div class="flex items-center gap-2 mt-2 md:mt-0">
+                    <span class="px-3 py-1 bg-success text-success-content rounded-box">Resolved</span>
+                    <span class="text-sm text-neutral-content">Warning issued</span>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-base-300 pb-4">
+                <div>
+                    <p class="font-medium">Overloading</p>
+                    <p class="text-sm text-neutral-content">2024-01-10</p>
+                </div>
+                <div class="flex items-center gap-2 mt-2 md:mt-0">
+                    <span class="px-3 py-1 bg-warning text-warning-content rounded-box">Pending</span>
+                    <span class="text-sm text-neutral-content">Under review</span>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-base-300 pb-4">
+                <div>
+                    <p class="font-medium">Reckless Driving</p>
+                    <p class="text-sm text-neutral-content">2024-01-05</p>
+                </div>
+                <div class="flex items-center gap-2 mt-2 md:mt-0">
+                    <span class="px-3 py-1 bg-secondary text-secondary-content rounded-box">Reviewed</span>
+                    <span class="text-sm text-neutral-content">1 week suspension</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+  <script src="../node_modules/flyonui/flyonui.js"></script>
+</body>
+</html>
+

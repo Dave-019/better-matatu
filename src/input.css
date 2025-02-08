@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'cascadia';
+    src: url(Cascadia.ttf);
+}
+@font-face {
+    font-family: 'lora';
+    src: url(Lora-VariableFont_wght.ttf);
+}
+:root {
+    --rounded-box: 1.5rem;
+    --rounded-btn: 1rem;
+    --rounded-tooltip: 1.9rem;
+    --animation-btn: 0.25s;
+    --animation-input: 0.2s;
+    --btn-focus-scale: 0.5;
+    --border-btn: 1px;
+    --tab-border: 1px;
+    --tab-radius: 0.5rem;
+  }
