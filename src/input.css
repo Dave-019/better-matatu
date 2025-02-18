@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'cascadia';
-    src: url(Cascadia.ttf);
+    src: url(DMSans-VariableFont_opsz\,wght.ttf);
 }
 @font-face {
     font-family: 'lora';
@@ -20,4 +20,5 @@
     --border-btn: 1px;
     --tab-border: 1px;
     --tab-radius: 0.5rem;
+    --border-primary:#3A1D03;
   }
