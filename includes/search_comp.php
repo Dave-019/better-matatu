@@ -10,12 +10,11 @@
   </div>
 
   <!-- Report Button -->
-  <a href="./pages/matatus.php" class="btn btn-soft btn-error">Report</a>
+  <a href="./pages/report.php" class="btn btn-soft btn-error">Report</a>
 </div>
 
-
 <div id="slide-up-animated-modal" class="overlay modal overlay-open:opacity-100 hidden" role="dialog" tabindex="-1">
-  <div class="overlay-animation-target modal-dialog overlay-open:mt-4 overlay-open:opacity-100 overlay-open:duration-500 mt-12 transition-all ease-out" >
+  <div class="overlay-animation-target modal-dialog overlay-open:mt-4 overlay-open:opacity-100 overlay-open:duration-500 mt-12 transition-all ease-out">
     <div class="modal-content">
       <div class="modal-header">
         <h3 class="modal-title">Search results</h3>
@@ -24,21 +23,21 @@
         </button>
       </div>
       <div class="modal-body">
-        
+        <!-- Results will appear here as cards -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-soft btn-warning" data-overlay="#slide-up-animated-modal">
           Close
         </button>
-       
       </div>
     </div>
   </div>
 </div>
+
 <script>
 document.getElementById("searchButton").addEventListener("click", function() {
-    let query = document.getElementById("searchInput").value.trim();
-    let modalBody = document.querySelector(".modal-body");
+    const query = document.getElementById("searchInput").value.trim();
+    const modalBody = document.querySelector(".modal-body");
 
     if (query.length < 3) {
         modalBody.innerHTML = "<p class='text-red-500'>Please enter at least 3 characters to search.</p>";
@@ -56,10 +55,23 @@ document.getElementById("searchButton").addEventListener("click", function() {
 
             if (data.length > 0) {
                 data.forEach(item => {
-                    let div = document.createElement("div");
-                    div.classList.add("p-2", "border-b");
-                    div.innerHTML = `<strong class="text-blue-600">${item.type.toUpperCase()}</strong>: ${item.name}`;
-                    modalBody.appendChild(div);
+                    const card = document.createElement("div");
+                    // Card styling classes from Tailwind CSS
+                    card.classList.add("bg-base-100", "p-4", "rounded-box", "mb-4", "border" ,"card","border-info/20");
+                    card.innerHTML = `
+                        <h4 class="text-xl font-semibold text-b mb-2">${item.type.toUpperCase()}</h4>
+                        <p class="text-md font-medium mb-2">${item.identifier}</p>
+                        <div class="text-sm text-base-content">
+                          ${item.info1 ? `<div><strong>Info1:</strong> ${item.info1}</div>` : ''}
+                          ${item.info2 ? `<div><strong>Info2:</strong> ${item.info2}</div>` : ''}
+                          ${item.info3 ? `<div><strong>Info3:</strong> ${item.info3}</div>` : ''}
+                        </div>
+                    `;
+                    card.addEventListener("click", function() {
+                        // Custom action here, e.g., navigate to a page
+                        window.location.href = `./pages/driver.php`; // Redirect
+                    });
+                    modalBody.appendChild(card);
                 });
             } else {
                 modalBody.innerHTML = "<p class='text-gray-500'>No results found.</p>";
@@ -74,10 +86,5 @@ document.getElementById("searchButton").addEventListener("click", function() {
         });
 });
 
-// Close modal when clicking close button
-document.querySelectorAll(".close-modal").forEach(btn => {
-    btn.addEventListener("click", () => {
-        document.getElementById("slide-up-animated-modal").classList.add("hidden");
-    });
-});
+
 </script>

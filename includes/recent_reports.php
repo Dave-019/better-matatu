@@ -39,7 +39,7 @@ $conn->close();
                 <div class="card sm:max-w-sm bg-base-100 rounded-box border border-info/20 ">
                     <div class="card-body">
                         <div class="flex justify-between gap-4">
-                            <h5 class="card-title text-info text-xl font-semibold mb-2.5"><?php echo htmlspecialchars($incident['violation_type']); ?></h5>
+                            <h5 class="card-title text-base-content text-xl font-semibold mb-2.5"><?php echo htmlspecialchars($incident['violation_type']); ?></h5>
                             <p class="text-xs">
                                 <span class="badge 
                                     <?php 
@@ -59,7 +59,7 @@ $conn->close();
                         <p class="text-xs text-base-content/50"><span class="icon-[tabler--map-pin] text-base-content/50 mr-1"></span><?php echo htmlspecialchars($incident['location']); ?></p>
                         <p class="text-xs text-base-content/50"><span class="icon-[tabler--calendar] text-base-content/50 mr-1"></span> <?php echo htmlspecialchars(date('Y-m-d', strtotime($incident['timestamp']))); ?></p>
                         <p class="text-secondary-content"><?php echo htmlspecialchars($incident['description']); ?></p>
-                        <p class="text-xs text-base-content/50  "><?php echo htmlspecialchars($incident['details']); ?></p>
+                        <p class="text-xs text-base-content "><?php echo htmlspecialchars($incident['details']); ?></p>
                     </div>
                     <?php if ($incident['image_path']): ?>
                         <figure class="p-4">

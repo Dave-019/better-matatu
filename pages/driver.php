@@ -15,7 +15,7 @@
                 <h1 class="text-2xl font-bold">John Doe</h1>
                 <p class="text-neutral-content">Metro Sacco</p>
                 <div class="flex gap-4 mt-2">
-                    <span class="px-3 py-1 bg-success text-success-content rounded-md">
+                    <span class="px-3 py-1 bg-success text-success-content rounded-box">
                         Safety Score: 85%
                     </span>
                     <span class="px-3 py-1 bg-error text-error-content rounded-box">
