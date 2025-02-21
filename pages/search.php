@@ -11,12 +11,13 @@ if (isset($_GET['query'])) {
     // Each SELECT returns 5 columns with matching names
     $stmt = $conn->prepare("
         SELECT 'driver' AS type, 
-               license_number AS identifier, 
+               name AS identifier, 
                phone AS info1, 
                safety_score AS info2, 
              violation_count AS info3
         FROM drivers
-        WHERE license_number LIKE ?
+        
+        WHERE name LIKE ?
         UNION
         SELECT 'sacco' AS type, 
                name AS identifier, 

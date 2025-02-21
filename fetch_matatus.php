@@ -1,7 +1,7 @@
 
 <?php
 include "./db_connection.php";
-/// Get search query from request
+
 $search = isset($_GET['q']) ? $conn->real_escape_string($_GET['q']) : '';
 
 if ($search !== "") {
@@ -20,8 +20,8 @@ if ($search !== "") {
         $data[] = $row;
     }
 
-    echo json_encode($data);  // Return JSON response
+    echo json_encode($data); 
 } else {
-    echo json_encode([]); // Return empty array if no input
+    echo json_encode([]); 
 }
 ?>

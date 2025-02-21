@@ -6,7 +6,7 @@
   <link href="../src/output.css" rel="stylesheet">
 </head>
 <body style="font-family:'lor',cascadia" class="text-base-content p-10 ">
-    <h1 class="text-3xl font-bold text-center">SACCO Dashboard</h1>
+    <h1 class="text-3xl font-bold text-center">Better Matatu Dashboard</h1>
    <div class="flex justify-center  my-12">
     <nav class="tabs tabs-bordered" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
         <button type="button" class="tab active-tab:tab-active active" id="tabs-default-item-1" data-tab="#tabs-default-1" aria-controls="tabs-default-1" role="tab" aria-selected="true">

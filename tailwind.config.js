@@ -2,9 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{html,js,php}",
           "index.php",
+          "index.html",
           "./pages/*.php",
           "./includes/*.php",
-          "./node_modules/flyonui/dist/js/*.js"
+          "./node_modules/flyonui/dist/js/*.js",
+          "./auth_pages/*.php",
+          "./passanger/*.php",
   ],
   
   theme: {

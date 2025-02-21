@@ -9,36 +9,28 @@
     </div>
   </div>
 
-
+  <!-- Report Button -->
 <div class="flex items-center gap-4">
-<a href="./auth/check_login.php" class="hidden sm:flex btn btn-soft  btn-warning">Report</a>
+<a href="../pages/report.php" class="hidden sm:flex btn btn-soft  btn-warning">Report<span class="icon-[tabler--exclamation-circle] size-6"></span> </a>
 <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]">
-        <button id="dropdown-scrollable" type="button" class="dropdown-toggle flex items-center" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-          <div class="avatar">
-            <div class="">
-              <span class="icon-[tabler--menu-2] size-8"></span>
-            </div>
-          </div>
-        </button>
-        <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-avatar">
+    <button id="dropdown-scrollable" type="button" class="dropdown-toggle " aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+        <div class="avatar w-10 h-10 rounded-full bg-white flex items-center justify-center text-primary text-3xl font-bold ">
+            <?php echo $initial; ?>
+        </div>
+    </button>
+    <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-avatar">
+    
         <li>
-            <a class="dropdown-item" href="./auth/register.php">
-                <span class="icon-[tabler--user] text-error"></span>
-                Sign-up
+            <a class="dropdown-item" href="out.php">
+                <span class="icon-[tabler--login] text-error size-6"></span>
+                Sign-out
             </a>
         </li>
-        <li>
-            <a class="dropdown-item" href="./auth/login.php">
-                <span class="icon-[tabler--login] text-error"></span>
-                Sign-in
-            </a>
+        <li class="dropdown-footer gap-2 sm:hidden">
+            <a href="../pages/report.php" class="w-full btn btn-soft btn-error"> Report <span class="icon-[tabler--exclamation-circle] size-6"></span> </a>
         </li>
-       
-          <li class="dropdown-footer gap-2 sm:hidden">
-          <a href="./auth/check_login.php" class="w-full btn btn-soft btn-error">Report</a>
-          </li>
-        </ul>
-      </div>
+    </ul>
+</div>
   
 </div>
 </div>
@@ -53,7 +45,7 @@
     </button>
   </div>
   <div class="modal-body ">
-    <!-- 😂😂 -->
+    <!-- Results will appear here as cards -->
   </div>
   <div class="modal-footer">
     <button type="button" class="btn  btn-soft btn-warning" data-overlay="#slide-up-animated-modal">
@@ -76,18 +68,18 @@ document.getElementById("searchButton").addEventListener("click", function() {
         return;
     }
 
-    fetch(`./pages/search.php?query=${encodeURIComponent(query)}`)
+    fetch(`../pages/search.php?query=${encodeURIComponent(query)}`)
         .then(response => {
             if (!response.ok) throw new Error("Invalid response from server");
             return response.json();
         })
         .then(data => {
-            modalBody.innerHTML = ""; // Clear previous results
+            modalBody.innerHTML = ""; 
 
             if (data.length > 0) {
                 data.forEach(item => {
                     const card = document.createElement("div");
-                    // Card styling classes from Tailwind CSS
+                    
                     card.classList.add("bg-white", "p-4", "rounded-box", "mb-4", "border" ,"car","border-gray-500/80");
                     card.innerHTML = `
                         <h4 class="text-xl font-semibold text-gray-500 mb-2">${item.type.toUpperCase()}</h4>
@@ -99,8 +91,8 @@ document.getElementById("searchButton").addEventListener("click", function() {
                         </div>
                     `;
                     card.addEventListener("click", function() {
-                        
-                        window.location.href = `./pages/driver.php`; 
+                       
+                        window.location.href = `../pages/report.php`; // Redirect
                     });
                     modalBody.appendChild(card);
                 });

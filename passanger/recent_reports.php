@@ -1,7 +1,7 @@
 <?php
 
 
-
+// sql ya ku-Fetch recent incidents
 $sql = "SELECT 
         i.id AS incident_id, 
         i.violation_type, 
@@ -63,7 +63,7 @@ $conn->close();
                     </div>
                     <?php if ($incident['image_path']): ?>
                         <figure class="p-4">
-                            <img src="<?php echo htmlspecialchars($incident['image_path']); ?>" 
+                            <img src="../<?php echo htmlspecialchars($incident['image_path']); ?>" 
                                  alt="Incident Image" 
                                  class="object-cover w-full h-48 rounded-md" />
                         </figure>
