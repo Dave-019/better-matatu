@@ -8,6 +8,7 @@ module.exports = {
           "./node_modules/flyonui/dist/js/*.js",
           "./auth_pages/*.php",
           "./passanger/*.php",
+          './node_modules/notyf/**/*.js'
   ],
   
   theme: {
