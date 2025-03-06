@@ -5593,12 +5593,20 @@ textarea:focus-visible {
   inset: 0px;
 }
 
+.bottom-0 {
+  bottom: 0px;
+}
+
 .bottom-full {
   bottom: 100%;
 }
 
 .end-3 {
   inset-inline-end: 0.75rem;
+}
+
+.left-0 {
+  left: 0px;
 }
 
 .top-0 {
@@ -5615,14 +5623,6 @@ textarea:focus-visible {
 
 .top-full {
   top: 100%;
-}
-
-.bottom-0 {
-  bottom: 0px;
-}
-
-.left-0 {
-  left: 0px;
 }
 
 .z-50 {
@@ -5721,6 +5721,10 @@ textarea:focus-visible {
   margin-top: 1rem;
 }
 
+.mt-40 {
+  margin-top: 10rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -5751,6 +5755,10 @@ textarea:focus-visible {
 
 .grid {
   display: grid;
+}
+
+.contents {
+  display: contents;
 }
 
 .hidden {
@@ -5806,8 +5814,16 @@ textarea:focus-visible {
   height: 12rem;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .h-8 {
   height: 2rem;
+}
+
+.h-80 {
+  height: 20rem;
 }
 
 .h-\[11rem\] {
@@ -5820,10 +5836,6 @@ textarea:focus-visible {
 
 .h-full {
   height: 100%;
-}
-
-.h-6 {
-  height: 1.5rem;
 }
 
 .max-h-40 {
@@ -5858,16 +5870,16 @@ textarea:focus-visible {
   width: 80%;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-full {
   width: 100%;
 }
 
 .w-px {
   width: 1px;
-}
-
-.w-6 {
-  width: 1.5rem;
 }
 
 .min-w-28 {
@@ -5880,6 +5892,10 @@ textarea:focus-visible {
 
 .min-w-60 {
   min-width: 15rem;
+}
+
+.min-w-full {
+  min-width: 100%;
 }
 
 .max-w-2xl {
@@ -5898,12 +5914,12 @@ textarea:focus-visible {
   max-width: 100%;
 }
 
-.max-w-xl {
-  max-width: 36rem;
-}
-
 .max-w-md {
   max-width: 28rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-1 {
@@ -6040,6 +6056,10 @@ textarea:focus-visible {
 
 .overflow-y-auto {
   overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .truncate {
@@ -6227,6 +6247,10 @@ textarea:focus-visible {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-cover {
+  background-size: cover;
+}
+
 .fill-black {
   fill: #000;
 }
@@ -6321,8 +6345,16 @@ textarea:focus-visible {
   padding-bottom: 1rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .align-middle {
@@ -6403,6 +6435,10 @@ textarea:focus-visible {
 
 .lowercase {
   text-transform: lowercase;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .text-accent {
@@ -6517,10 +6553,6 @@ textarea:focus-visible {
   color: var(--fallback-wac,oklch(var(--wac)/var(--tw-text-opacity, 1)));
 }
 
-.underline {
-  text-decoration-line: underline;
-}
-
 .opacity-0 {
   opacity: 0;
 }
@@ -6545,8 +6577,25 @@ textarea:focus-visible {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.backdrop-blur-md {
+  --tw-backdrop-blur: blur(12px);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.backdrop-brightness-150 {
+  --tw-backdrop-brightness: brightness(1.5);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .transition {
@@ -6608,6 +6657,14 @@ textarea:focus-visible {
   --border-primary:#3A1D03;
   --rectangle:50%;
   --rounded-badge:1.9rem;
+}
+
+. {
+  --tw-bg-opacity: 0.3;
+  --tw-backdrop-blur: blur(16px);
+  --tw-backdrop-saturate: saturate(1.5);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 [data-tab].active.active-tab\:tab-active.tab:not([disabled]) {
@@ -7312,6 +7369,11 @@ textarea:focus-visible {
 }
 
 @media (min-width: 640px) {
+  .sm\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .sm\:inline {
     display: inline;
   }
@@ -7330,6 +7392,26 @@ textarea:focus-visible {
 
   .sm\:w-auto {
     width: auto;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
+  .sm\:w-1\/2 {
+    width: 50%;
+  }
+
+  .sm\:w-4\/5 {
+    width: 80%;
+  }
+
+  .sm\:w-5\/6 {
+    width: 83.333333%;
+  }
+
+  .sm\:w-3\/4 {
+    width: 75%;
   }
 
   .sm\:max-w-sm {
@@ -7373,6 +7455,11 @@ textarea:focus-visible {
   .md\:items-center {
     align-items: center;
   }
+
+  .md\:backdrop-filter-none {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -7389,3 +7476,5 @@ textarea:focus-visible {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+  
+  

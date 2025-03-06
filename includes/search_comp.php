@@ -53,7 +53,7 @@
     </button>
   </div>
   <div class="modal-body ">
-    <!-- 😂😂 -->
+   
   </div>
   <div class="modal-footer">
     <button type="button" class="btn  btn-soft btn-warning" data-overlay="#slide-up-animated-modal">
@@ -66,57 +66,54 @@
 </div>
 
 <script>
-document.getElementById("searchButton").addEventListener("click", function() {
-    const query = document.getElementById("searchInput").value.trim();
-    const modalBody = document.querySelector(".modal-body");
+  document.getElementById("searchButton").addEventListener("click", function () {
+        const query = document.getElementById("searchInput").value.trim();
+        const modalBody = document.querySelector(".modal-body");
+      // damn ,,i need to be serious man 😂😂 -->
+        if (query.length < 3) {
+            modalBody.innerHTML = "<p class='text-red-500'>Please enter at least 3 characters to search.</p>";
+            document.getElementById("slide-up-animated-modal").classList.remove("hidden");
+            return;
+        }
 
-    if (query.length < 3) {
-        modalBody.innerHTML = "<p class='text-red-500'>Please enter at least 3 characters to search.</p>";
-        document.getElementById("slide-up-animated-modal").classList.remove("hidden");
-        return;
-    }
+        fetch(`./services/search.php?query=${encodeURIComponent(query)}`)
+            .then(response => {
+                if (!response.ok) throw new Error("Invalid response from server");
+                return response.json();
+            })
+            .then(data => {
+                modalBody.innerHTML = ""; 
 
-    fetch(`./pages/search.php?query=${encodeURIComponent(query)}`)
-        .then(response => {
-            if (!response.ok) throw new Error("Invalid response from server");
-            return response.json();
-        })
-        .then(data => {
-            modalBody.innerHTML = ""; // Clear previous results
-
-            if (data.length > 0) {
-                data.forEach(item => {
-                    const card = document.createElement("div");
-                    // Card styling classes from Tailwind CSS
-                    card.classList.add("bg-white", "p-4", "rounded-box", "mb-4", "border" ,"car","border-gray-500/80");
-                    card.innerHTML = `
-                        <h4 class="text-xl font-semibold text-gray-500 mb-2">${item.type.toUpperCase()}</h4>
-                        <p class="text-md font-medium mb-2 text-gray-500">${item.identifier}</p>
-                        <div class="text-sm text-gray-500">
-                          ${item.info1 ? `<div><strong>Info1:</strong> ${item.info1}</div>` : ''}
-                          ${item.info2 ? `<div><strong>Info2:</strong> ${item.info2}</div>` : ''}
-                          ${item.info3 ? `<div><strong>Info3:</strong> ${item.info3}</div>` : ''}
-                        </div>
-                    `;
-                    card.addEventListener("click", function() {
-                        
-                        window.location.href = `./pages/driver.php`; 
+                if (data.length > 0) {
+                    data.forEach(item => {
+                        const card = document.createElement("div");
+                        card.classList.add("bg-white", "p-4", "rounded-box", "mb-4", "border", "car", "border-gray-500/80");
+                        card.innerHTML = `
+                            <h4 class="text-xl font-semibold text-gray-500 mb-2">${item.type.toUpperCase()}</h4>
+                            <p class="text-md font-medium mb-2 text-gray-500">${item.identifier}</p>
+                            <div class="text-sm text-gray-500">
+                              ${item.info1 ? `<div><strong>Info1:</strong> ${item.info1}</div>` : ''}
+                              ${item.info2 ? `<div><strong>Info2:</strong> ${item.info2}</div>` : ''}
+                              ${item.info3 ? `<div><strong>Info3:</strong> ${item.info3}</div>` : ''}
+                            </div>
+                        `;
+                        card.addEventListener("click", function () {
+                            window.location.href = `./pages/driver.php?id=${item.id}&type=${encodeURIComponent(item.type)}`;
+                        });
+                        modalBody.appendChild(card);
                     });
-                    modalBody.appendChild(card);
-                });
-            } else {
-                modalBody.innerHTML = "<p class='text-gray-500'>No results found.</p>";
-            }
+                } else {
+                    modalBody.innerHTML = "<p class='text-gray-500'>No results found.</p>";
+                }
 
-            document.getElementById("slide-up-animated-modal").classList.remove("hidden");
-        })
-        .catch(error => {
-            console.error("Error fetching data:", error);
-            modalBody.innerHTML = "<p class='text-error-500'>Error fetching search results.</p>";
-            document.getElementById("slide-up-animated-modal").classList.remove("hidden");
-        });
-});
-
+                document.getElementById("slide-up-animated-modal").classList.remove("hidden");
+            })
+            .catch(error => {
+                console.error("Error fetching data:", error);
+                modalBody.innerHTML = "<p class='text-error-500'>Error fetching search results.</p>";
+                document.getElementById("slide-up-animated-modal").classList.remove("hidden");
+            });
+    });
 
 </script>
 

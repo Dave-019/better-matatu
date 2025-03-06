@@ -15,8 +15,8 @@
 <div> 
   <?php include "includes/sacco_leaderboard.php"; ?>
   <?php include "includes/recent_reports.php"; ?>
-  <!--price-->
-  <div class="card w-full max-w-2xl md:w-1/2 bg-base-100 mx-auto rounded-box border border-base-success/20 overflow-x-auto">
+
+  <div class="glow card w-full max-w-2xl md:w-1/2 bg-base-100 mx-auto rounded-box border border-base-success/20 overflow-x-auto">
     <table class="table-borderless table">
       <thead>
         <tr>

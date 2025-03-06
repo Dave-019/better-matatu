@@ -3,14 +3,15 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 header('Content-Type: application/json');
 
-require '../db_connection.php'; // Your DB connection file
+require '../db_connection.php'; 
 
 if (isset($_GET['query'])) {
     $query = trim($_GET['query']);
     
-    // Each SELECT returns 5 columns with matching names
+    
     $stmt = $conn->prepare("
         SELECT 'driver' AS type, 
+                id as id,
                name AS identifier, 
                phone AS info1, 
                safety_score AS info2, 
@@ -20,6 +21,7 @@ if (isset($_GET['query'])) {
         WHERE name LIKE ?
         UNION
         SELECT 'sacco' AS type, 
+                id as id,
                name AS identifier, 
                route_license AS info1, 
                penalty_points AS info2, 
@@ -29,6 +31,7 @@ if (isset($_GET['query'])) {
         WHERE name LIKE ?
         UNION
         SELECT 'matatu' AS type, 
+               id as id,
                reg_num AS identifier, 
                route_number AS info1, 
                seat_capacity AS info2, 

@@ -1,7 +1,7 @@
   <!--leaderboard-->
  
-  <div class="card w-4/5 max-w-2xl md:w-1/2 bg-base-100 rounded-box p-4 border border-info/20 overflow-x-auto mx-auto mt-10 my-4">
-  <h2 class="text-xl font-semibold mb-4"> SACCOs Leaderboard</h2>
+  <div class="backdrop-blur-md backdrop-brightness-150  w-4/5 max-w-2xl md:w-1/2 overflow-x-auto mx-auto mt-10 my-4 rounded-box p-4 border border-info/20 ">
+  <h2 class="text-2xl font-semibold mb-4"> SACCOs Leaderboard</h2>
   <table class="table-striped table">
     <thead>
       <tr>
