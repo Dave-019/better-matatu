@@ -1,5 +1,5 @@
 <?php
-require_once './auth/config.php';
+require_once '../auth/config.php';
 
 $stmt = $pdo->prepare("
     SELECT 

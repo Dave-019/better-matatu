@@ -29,7 +29,7 @@
             <!--form-->
       
           <?php include 'matatu_reg.php';?>
-        <?php include "driver_table.php"; ?>
+           <?php include "driver_table.php"; ?>
 
        
            </div>
