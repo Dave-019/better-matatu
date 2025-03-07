@@ -34,105 +34,23 @@
        
            </div>
         </div>
-        <div id="tabs-default-2"role="tabpanel" aria-labelledby="tabs-default-item-2">
+        <div id="tabs-default-2" role="tabpanel" aria-labelledby="tabs-default-item-2">
             <div class="container mx-auto space-y-6 flex items-center justify-center flex-col">
-              
-                 
-            <!-- Quick Stats -->
-             <div>
-             <?php include '../includes/overview.php';?>
-             </div>
-                        <!-- Top Performing Drivers -->
-                        
-            <div class="card w-full max-w-3xl md:w-1/2 bg-base-100 rounded-box p-6 border border-base-success/20 overflow-x-auto mx-auto mt-10 my-4">
-                <h2 class="text-xl font-semibold mb-4"> Drivers Leaderboard</h2>
-                <table class="table-striped table">
-                  <thead>
-                    <tr>
-                      <th>Rank</th>
-                      <th>Driver Name</th>
-                      <th>Rating  </th>
-                      <th>Performance</th>
-                      
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- Rank 1 -->
-                    <tr>
-                      <td class="text-nowrap font-bold"> 1</td>
-                      <td>Super Metro</td>
-                      <td> 4.9</td>
-                      <td><span class="badge  badge-success text-xs">Excellent</span></td>
-               
-                    </tr>
-                    
-                    <!-- Rank 2 -->
-                    <tr>
-                      <td class="text-nowrap font-bold">2</td>
-                      <td>Embassava</td>
-                      <td> 4.7</td>
-                      <td><span class="badge badge-soft badge-primary text-xs">Very Good</span></td>
-              
-                    </tr>
-                    
-                    <!-- Rank 3 -->
-                    <tr>
-                      <td class="text-nowrap font-bold"> 3</td>
-                      <td>City Hoppa</td>
-                      <td> 4.5</td>
-                      <td><span class="badge badge-soft badge-info text-xs">Good</span></td>
-                   
-                    </tr>
-                    
-                  
-              
-                  </tbody>
-                </table>
-              </div>
-                        
+                <!-- Quick Stats -->
+                <div>
+                    <?php include '../includes/overview.php'; ?>
+                </div>
+                <!-- Top Performing Drivers -->
+                <div class="card w-full max-w-4xl md:w-1/2 bg-base-100 rounded-box p-6 border border-base-success/20 overflow-x-auto mx-auto mt-10 my-4">
+                    <?php include '../includes/driver_leaderboard.php'; ?>
+                </div>
                 <!-- Recent Reports -->
-                <div class="card p-6 bg-base-100  rounded-box border border-base-success/20 max-w-3xl md:w-1/2">
-                <h2 class="text-xl font-semibold mb-4">Recent Reports</h2>
-                <ol>
-                    <div>
-                        <li class="flex justify-between py-2">
-                            Reckless Driving
-                            <p class="text-xs"><span class="badge badge-warning rounded-md">Pending</span></p>
-                            
-                       </li>
-                       <li class="border-b flex justify-between py-2">
-                             KBZ 123X - John Doe - Westlands 
-                             <div> 2 hours ago</div>
-                       </li>
-                    </div>
-                    <div>
-                        <li class="flex justify-between py-2">
-                            Reckless Driving
-                            <p class="text-xs"><span class="badge badge-warning rounded-md">Pending</span></p>
-                            
-                       </li>
-                       <li class="border-b flex justify-between py-2">
-                             KBZ 123X - John Doe - Westlands 
-                             <div> 2 hours ago</div>
-                       </li>
-                    </div>
-                    <div>
-                        <li class="flex justify-between py-2">
-                            Reckless Driving
-                            <p class="text-xs"><span class="badge badge-warning rounded-md">Pending</span></p>
-                            
-                       </li>
-                       <li class="border-b flex justify-between py-2">
-                             KBZ 123X - John Doe - Westlands 
-                             <div> 2 hours ago</div>
-                       </li>
-                    </div>
-                </ol>
-            </div>
+                <?php include '../includes/recent-sacco.php'; ?>
             </div>
         </div>
         </div>
         <div id="tabs-default-3" class="hidden" role="tabpanel" aria-labelledby="tabs-default-item-3">
+          <div><?php include '../includes/vioations.php'?></div>
         </div>
       </div>
 
@@ -148,6 +66,8 @@
       <script src="../node_modules/datatables.net/js/dataTables.min.js"></script>
   <script src="../node_modules/flyonui/flyonui.js"></script>
   <script src="../node_modules/notyf/notyf.js"></script>
+
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const notyf = new Notyf();

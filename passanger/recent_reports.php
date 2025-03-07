@@ -46,10 +46,10 @@ $conn->close();
         Recent reports
     </div>
     <div class="min-h-screen flex">
-        <div class="flex flex-wrap justify-center gap-4 max-w-4xl p-6">
+    <div class="flex flex-wrap justify-center gap-4 max-w-4xl p-6">
             <?php foreach ($incidents as $incident): ?>
                 <div class="card w-full sm:max-w-sm bg-base-100 rounded-box border border-info/20 ">
-                    <div class="card-body">
+                <a href="../pages/report_record.php?id=<?=$incident['incident_id']; ?>">                <div class="card-body">
                         <div class="flex justify-between gap-4">
                             <h5 class="card-title text-base-content text-xl font-semibold mb-2.5"><?php echo htmlspecialchars($incident['violation_type']); ?></h5>
                             <p class="text-xs">
@@ -73,6 +73,7 @@ $conn->close();
                         <p class="text-secondary-content"><?php echo htmlspecialchars($incident['description']); ?></p>
                         <p class="text-xs text-base-content "><?php echo htmlspecialchars($incident['details']); ?></p>
                     </div>
+                </a>
                     <?php if ($incident['image_path']): ?>
                         <figure class="p-4">
                             <img src="../<?php echo htmlspecialchars($incident['image_path']); ?>" 
