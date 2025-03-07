@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'config.php'; // 
+require_once 'config.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-        // Allowed file formats
         $allowTypes = ['jpg', 'jpeg', 'png', 'gif'];
         if (in_array($fileType, $allowTypes)) {
             
@@ -43,11 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             $stmt = $pdo->prepare("INSERT INTO incidents 
                                 (passenger_id, matatu_id, driver_id, violation_type, description, details, location, image_path, timestamp) 
                                 VALUES (:passenger_id, :matatu_id, :driver_id, :violation_type, :description, :details, :location, :image, :timestamp)");
-
+//will do this update later,,my  😂💔..logic yako ni trash
                             $result = $stmt->execute([
                                 'passenger_id' => $passenger_id,
                                 'matatu_id' => $matatu_id,
-                                'driver_id' => $driver_id, //will do this update later 😂💔
+                                'driver_id' => $driver_id, 
                                 'violation_type' => $violation_type, 
                                 'description' => $description,
                                 'details' => $details,

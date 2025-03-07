@@ -4,7 +4,7 @@ $stmt = $pdo->prepare("SELECT route_number, standard_fare, peak_fare, off_peak_f
 $stmt->execute();
 $fares = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<!-- Pricing Table -->
+
 <div class="glow card w-full max-w-2xl md:w-1/2 bg-base-100 mx-auto rounded-box border border-base-success/20 overflow-x-auto">
     <table class="table-borderless table">
         <thead>
@@ -35,7 +35,7 @@ $fares = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
             <?php endif; ?>
 
-            <!-- Add Custom Services (Optional) -->
+
             <tr>
                 <td class="text-nowrap">Student Discount Ride</td>
                 <td>KSh 100</td>

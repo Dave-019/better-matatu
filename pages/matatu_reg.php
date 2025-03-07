@@ -178,14 +178,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                       
                         </div>
                     </div>
-                    <!-- End Personal Info -->
-                    <!-- Social Links -->
-    
-                    <!-- End Social Links -->
-                    <!-- Final Content -->
-   
-                    <!-- End Final Content -->
-                    <!-- Button Group -->
+               \
                     <div class="mt-5 flex items-center justify-between gap-x-2">
                         <button type="button" class="btn btn-primary btn-prev max-sm:btn-square" data-stepper-back-btn="">
                         <span class="icon-[tabler--chevron-left] text-primary-content size-5 rtl:rotate-180"></span>

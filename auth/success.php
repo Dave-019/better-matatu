@@ -23,7 +23,7 @@
 </head>
 <body>
     <div class="message">
-        <p>report submitted successfully ✅😂</p>
+        <p>report submitted successfully ✅😊</p>
     </div>
 </body>
 </html>

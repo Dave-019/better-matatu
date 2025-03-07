@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../src/output.css" rel="stylesheet">
-  <!-- Ensure the font 'lor' is available or use a fallback font -->
+
   <?php
   session_start();
   require '../db_connection.php';
