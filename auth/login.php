@@ -75,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <div></div>
                             <div class="text-sm">
                                 <a href="javascript:void(0);" class="text-oklch-51 hover:underline font-semibold">
-                                    Forgot your password?
+                                    
                                 </a>
                             </div>
                         </div>

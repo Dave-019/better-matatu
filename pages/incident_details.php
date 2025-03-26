@@ -48,7 +48,6 @@ try {
         exit;
     }
 
-    // Fetch timeline updates
     $stmt = $pdo->prepare("SELECT iu.*, u.name FROM incident_updates iu JOIN users u ON iu.updated_by = u.id WHERE incident_id = ? ORDER BY created_at ASC");
     $stmt->execute([$incident_id]);
     $updates = $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -289,6 +289,25 @@ INSERT INTO `users` (`id`, `name`, `email`, `phone`, `password_hash`, `role`, `c
 (15, 'admin', 'admin@gmail.com', '0712981502', '$2y$10$eRTNxuqqbCtt1Ay0dLcAlOtC9V40hnyPW2noQmkVoGMcbLDonr2CS', 'sacco_admin', '2025-02-20 12:05:03', '2025-02-20 12:05:03', NULL),
 (16, 'admin', 'admin1@gmail.com', '0712981502', '$2y$10$Gh65c2bPJqy7p8aQ8MDHTeJzwoZmvzT.qxZS2OmA7tfEJXi/sQ2cu', 'sacco_admin', '2025-02-21 05:21:22', '2025-02-21 05:21:22', NULL);
 
+CREATE TABLE `incident_updates` (
+  `id` int(11) NOT NULL,
+  `incident_id` int(11) NOT NULL,
+  `updated_by` int(11) NOT NULL,
+  `status` enum('pending','reviewed','resolved') NOT NULL,
+  `comment` text DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `incident_updates`
+--
+
+INSERT INTO `incident_updates` (`id`, `incident_id`, `updated_by`, `status`, `comment`, `created_at`) VALUES
+(1, 18, 20, 'reviewed', 'the driver was suspended', '2025-03-07 14:27:46'),
+(2, 18, 20, 'reviewed', '', '2025-03-07 14:33:12'),
+(3, 18, 20, 'resolved', '', '2025-03-07 14:35:32'),
+(4, 18, 20, 'pending', '', '2025-03-07 14:35:38'),
+(5, 18, 20, 'reviewed', 'the report is recievesd and driver with face the legal action', '2025-03-07 14:37:32');
 --
 -- Indexes for dumped tables
 --

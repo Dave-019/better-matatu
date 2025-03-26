@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+  if (!isset($_SESSION['user_id'])) {
+    header('Location: ../auth/login.php');
+    exit();
+}
+?>
 <!doctype html>
 <html>
 <head>
@@ -9,6 +15,44 @@
 </head>
 <body style="font-family:'lor',cascadia" class="text-base-content p-10 ">
     <h1 class="text-3xl font-bold text-center">Better Matatu Dashboard</h1>
+    <div class='flex justify-between'>
+      <div></div> 
+      <div class="flex items-center gap-4">
+<div class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]">
+        <button id="dropdown-scrollable" type="button" class="dropdown-toggle flex items-center" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+          <div class="avatar">
+            <div class="">
+              <span class="icon-[tabler--menu-2] size-8"></span>
+            </div>
+          </div>
+        </button>
+        <ul class="dropdown-menu dropdown-open:opacity-100 hidden min-w-60" role="menu" aria-orientation="vertical" aria-labelledby="dropdown-avatar">
+        <li>
+            <a class="dropdown-item" href="../includes/add_price.php">
+                <span class="icon-[tabler--user] text-error"></span>
+                add price
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="../includes/safety_check.php">
+                <span class="icon-[tabler--user] text-error"></span>
+                safty checks
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="../auth/out.php">
+                <span class="icon-[tabler--login] text-error"></span>
+                Sign-out
+            </a>
+        </li>
+       
+        </ul>
+      </div>
+  
+</div>
+</div>
+
+    </div>
    <div class="flex justify-center  my-12">
     <nav class="tabs tabs-bordered" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
         <button type="button" class="tab active-tab:tab-active " id="tabs-default-item-1" data-tab="#tabs-default-1" aria-controls="tabs-default-1" role="tab" aria-selected="false">
@@ -26,25 +70,22 @@
       <div class="mt-4">
         <div id="tabs-default-1" class="hidden"  role="tabpanel" aria-labelledby="tabs-default-item-1">
             <div class="flex justify-center flex-col items-center ">
-            <!--form-->
+       
       
           <?php include 'matatu_reg.php';?>
            <?php include "driver_table.php"; ?>
 
-       
            </div>
         </div>
         <div id="tabs-default-2" role="tabpanel" aria-labelledby="tabs-default-item-2">
             <div class="container mx-auto space-y-6 flex items-center justify-center flex-col">
-                <!-- Quick Stats -->
                 <div>
                     <?php include '../includes/overview.php'; ?>
                 </div>
-                <!-- Top Performing Drivers -->
+               
                 <div class="card w-full max-w-4xl md:w-1/2 bg-base-100 rounded-box p-6 border border-base-success/20 overflow-x-auto mx-auto mt-10 my-4">
                     <?php include '../includes/driver_leaderboard.php'; ?>
                 </div>
-                <!-- Recent Reports -->
                 <?php include '../includes/recent-sacco.php'; ?>
             </div>
         </div>

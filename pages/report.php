@@ -109,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="space-y-2">
                     <label for="car_reg_num" class="text-gray-700">Car Registration Number</label>
                     <input id="car_reg_num" type="text" name="car_reg_num" 
-                           class="w-full p-3 rounded-box border border-gray-500/80 text-base-content" 
+                           class="w-full p-3 rounded-box border border-gray-500/80 text-red-500                                     " 
                            placeholder="Car registration number" required>
                 </div>
                 <div class="space-y-2">
@@ -127,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             "optionTemplate": "<div class=\"flex justify-between items-center w-full\"><span data-title></span><span class=\"icon-[tabler--check] flex-shrink-0 size-4 text-primary hidden selected:block \"></span></div>",
                             "extraMarkup": "<span class=\"icon-[tabler--caret-up-down] flex-shrink-0 size-4 text-base-content absolute top-1/2 end-3 -translate-y-1/2 \"></span>"
                         }'
-                        class="w-full p-3 rounded-box border border-gray-500/80 text-base-content"
+                        class="w-full p-3 rounded-box border border-gray-500/80 text-red-500"
                         required
                     >
                         <option value="">Choose description</option>
@@ -140,19 +140,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="space-y-2">
                 <label for="violation_type" class="text-gray-700">violation type</label>
                 <textarea id="violation_type" name="violation_type" rows="3"
-                          class="w-full h-[7rem] p-3 rounded-box border border-gray-500/80 text-base-content" 
+                          class="w-full h-[7rem] p-3 rounded-box border border-gray-500/80 text-red-500" 
                           placeholder="violation type" required></textarea>
             </div>
             <div class="space-y-2">
                 <label for="details" class="text-gray-700">Details</label>
                 <textarea id="details" name="details" rows="3"
-                          class="w-full h-[11rem] p-3 rounded-box border border-gray-500/80 text-base-content" 
+                          class="w-full h-[11rem] p-3 rounded-box border border-gray-500/80 text-red-500" 
                           placeholder="Additional details" required></textarea>
             </div>
             <div class="space-y-2">
                 <label for="location" class="text-gray-700">Location</label>
                 <input id="location" name="location" type="text" 
-                       class="w-full p-3 rounded-box border border-gray-500/80 text-base-content" 
+                       class="w-full p-3 rounded-box border border-gray-500/80 text-red-500" 
                        placeholder="Incident location" required>
             </div>
             <div class="space-y-2">

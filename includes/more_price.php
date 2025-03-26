@@ -1,9 +1,18 @@
 <?php
-require_once "./auth/config.php";
-$stmt = $pdo->prepare("SELECT route_number, standard_fare, peak_fare, off_peak_fare FROM fares LIMIT 2 ");
+require_once "../auth/config.php";
+$stmt = $pdo->prepare("SELECT route_number, standard_fare, peak_fare, off_peak_fare FROM fares ");
 $stmt->execute();
 $fares = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/output.css">
+</head>
+<body>
 <div class="glow card w-full max-w-2xl md:w-1/2 bg-base-100 mx-auto rounded-box border border-base-success/20 overflow-x-auto">
     <table class="table-borderless table">
         <thead>
@@ -43,6 +52,7 @@ $fares = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </tbody>
 
     </table>
-    <a href="./includes/more_price.php" class="btn btn-warning">view more</a>
 
 </div>
+</body>
+</html>

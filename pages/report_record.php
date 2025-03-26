@@ -18,7 +18,6 @@
   $updates = $stmt->fetchAll(PDO::FETCH_ASSOC);
   
   if (empty($updates)) {
-    // Default pending timeline item
     echo '<li>
       <hr />
       <div class="timeline-middle">

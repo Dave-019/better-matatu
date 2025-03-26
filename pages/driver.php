@@ -57,7 +57,6 @@ if ($type === 'driver') {
 <body style="font-family:'lor',cascadia" class="text-base-content p-6">
   <div class="max-w-xl mx-auto space-y-6">
 
-    <!-- Profile Section -->
     
     <div class="bg-base-100 p-6 rounded-box border border-info/20">
     <h1 class="text-2xl font-bold text-warning">DRIVER</h1>
@@ -72,12 +71,14 @@ if ($type === 'driver') {
                     <span class="px-3 py-1 bg-error text-error-content rounded-box">
                         Violations: <?php echo htmlspecialchars($driver['violation_count']); ?>
                     </span>
+                    <a  href="report.php" class="px-3 py-1 btn btn-warning btn-soft text-error-content rounded-box">
+                       report
+                    </a>
                 </div>
             </div>
         </div>
   
 
-    <!-- Matatu Details -->
     <div class="bg-base-200 p-6 rounded-box border border-info/20">
         <h2 class="text-xl font-semibold mb-4">Assigned Matatu</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -92,8 +93,9 @@ if ($type === 'driver') {
             </div>
         </div>
     </div>
-
-    <!-- Ratings Section -->
+    <div class="bg-base-200 p-6 rounded-box border border-info/20">
+        <?php include'rating.php'; ?>
+    </div>
     <div class="bg-base-200 p-6 rounded-box border border-info/20">
         <h2 class="text-xl font-semibold mb-4">Recent Ratings & Feedback</h2>
         <div class="space-y-4">
@@ -108,7 +110,6 @@ if ($type === 'driver') {
         </div>
     </div>
 
-    <!-- Violations Section -->
     <div class="bg-base-200 p-6 rounded-box border border-info/20">
         <h2 class="text-xl font-semibold mb-4">Violation History</h2>
         <div class="space-y-4">

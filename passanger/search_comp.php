@@ -1,6 +1,5 @@
 <div class="w-full max-w-2xl md:w-3/4 mx-auto mt-4 px-4 flex items-center justify-between">
   <div class="relative flex-2">
-    <!-- Search bar -->
     <div class="flex items-center gap-2">
       <input id="searchInput" class="input input-bordered w-full" type="text" placeholder="Search for a matatu, SACCO, or driver" role="combobox" aria-expanded="false" />
       <button id="searchButton" class="btn rounded-box btn-soft btn-warning" aria-haspopup="dialog" aria-expanded="false" aria-controls="slide-up-animated-modal" data-overlay="#slide-up-animated-modal" type="button">
@@ -9,7 +8,6 @@
     </div>
   </div>
 
-  <!-- Report Button -->
 <div class="flex items-center gap-4">
 <a href="../pages/report.php" class="hidden sm:flex btn btn-soft  btn-warning">Report<span class="icon-[tabler--exclamation-circle] size-6"></span> </a>
 <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:8] [--placement:bottom-end]">
@@ -60,7 +58,6 @@
   document.getElementById("searchButton").addEventListener("click", function () {
         const query = document.getElementById("searchInput").value.trim();
         const modalBody = document.querySelector(".modal-body");
-      // damn ,,i need to be serious man 😂😂 -->
         if (query.length < 3) {
             modalBody.innerHTML = "<p class='text-red-500'>Please enter at least 3 characters to search.</p>";
             document.getElementById("slide-up-animated-modal").classList.remove("hidden");

@@ -1,6 +1,6 @@
 <?php
 require_once "../auth/config.php";
-$stmt = $pdo->prepare("SELECT route_number, standard_fare, peak_fare, off_peak_fare FROM fares");
+$stmt = $pdo->prepare("SELECT route_number, standard_fare, peak_fare, off_peak_fare FROM fares LIMIT 2");
 $stmt->execute();
 $fares = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -42,4 +42,7 @@ $fares = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tr>
         </tbody>
     </table>
+    <a href="./more_price.php" class="btn btn-warning">view more</a>
+
+
 </div>

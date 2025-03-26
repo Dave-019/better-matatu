@@ -152,7 +152,6 @@ try {
                             <label class="text-gray-800 text-sm mb-2 block">Role</label>
                             <select id="role" name="role" required class="w-full border border-gray-300 px-4 py-3 rounded-md">
                                 <option value="">Select Role</option>
-                                <option value="super_admin">Super Admin</option>
                                 <option value="sacco_admin">SACCO Admin</option>
                                 <option value="passenger">Passenger</option>
                             </select>
