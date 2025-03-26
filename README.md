@@ -22,5 +22,5 @@ Follow these steps to set up and run the project:
    npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
    ```  
 
-And that's it! Your project is now set up and ready to go. 🚀
+And that's it! Your project is now set up and ready to go
 
